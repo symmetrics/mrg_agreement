@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Symmetrics_Agreement>
+			<version>0.0.1</version>
+			<depends />
+		</Symmetrics_Agreement>
+	</modules>
+	<global>
+		<models>
+			<checkout>
+				<rewrite>
+					<agreement>Symmetrics_Agreement_Model_Agreement</agreement>
+				</rewrite>
+			</checkout>
+		</models>
+		<blocks>
+            <checkout>
+                <rewrite>
+                    <agreements>Symmetrics_Agreement_Block_Agreement</agreements>
+                </rewrite>
+            </checkout>
+		</blocks>
+	</global>
+</config>

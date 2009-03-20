@@ -12,37 +12,32 @@ excludes = {
 
 # who is responsible for this package?
 team_leader = {
-    'Leader': 'info@symmetrics.de'
+    'Leader': 'sb@symmetrics.de'
 }
 
 # who should check this package in the first place?
 maintainer = {
-    'Developer': 'info@symmetrics.de'
+    'Developer': 'eg@symmetrics.de'
 }
 
 # relative installation path (e.g. app/code/local)
 install_path = ''
 
 # additional infos
-info = '[put some info here]'
+info = 'Rendering für das Agreement-Feld in der Bestellung'
 summary = '''
-    [put more info here.
-    blaaa blaa
-    blaa blaaaaa
-    blaaaa.]
+
 '''
 notes = '''
-    [special notes, restrictions, bugs etc.]
+
 '''
 license = 'AFL 3.0'
 authors = {
-    'John Doe': 'info@symmetrics.de'
+    'Eugen Gitin': 'eg@symmetrics.de'
 }
 homepage = 'http://www.symmetrics.de'
 
 # files this package depends on
 depends_on_files = (
-    'app/code/core/.../1.php',
-    'app/code/core/.../2.php',
-    'app/code/core/.../3.php',
+
 )
