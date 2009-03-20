@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Symmetrics_Agreement>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Symmetrics_Agreement>     
+	</modules>
+</config>
