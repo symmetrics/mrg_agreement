@@ -1,4 +1,11 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * @category    Symmetrics
+ * @package     Symmetrics_Agreement
+ * @author      symmetrics gmbh <info@symmetrics.de>, Eugen Gitin <eg@symmetrics.de>
+ */
+ -->
 <config>
 	<modules>
 		<Symmetrics_Agreement>
@@ -21,5 +28,16 @@
                 </rewrite>
             </checkout>
 		</blocks>
-	</global>
+		<events>
+            <controller_action_layout_render_before_checkout_onepage_index>
+                <observers>
+                    <symmetrics_agreement_model_observer>
+                        <type>singleton</type>
+                        <class>Symmetrics_Agreement_Model_Observer</class>
+                        <method>setTheme</method>
+                    </symmetrics_agreement_model_observer>
+                </observers>
+            </controller_action_layout_render_before_checkout_onepage_index>
+        </events>
+    </global>
 </config>
