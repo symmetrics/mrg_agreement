@@ -24,9 +24,9 @@ maintainer = {
 install_path = ''
 
 # additional infos
-info = 'Rendering für das AGB-Feld in der Bestellung'
+info = 'Rendering fÃ¼s AGB-Feld in der Bestellung'
 summary = '''
-	Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
+	FÃ¼gt die MÃ¶glichkeit hinzu in den AGBs am Ende der Bestellung
 	{{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
 	zu dem Symmetrics_Impressum Modul
 '''
