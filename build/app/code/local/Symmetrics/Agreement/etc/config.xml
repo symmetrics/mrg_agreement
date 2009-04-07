@@ -28,6 +28,7 @@
                 </rewrite>
             </checkout>
 		</blocks>
+<!--
 		<events>
             <controller_action_layout_render_before_checkout_onepage_index>
                 <observers>
@@ -39,5 +40,6 @@
                 </observers>
             </controller_action_layout_render_before_checkout_onepage_index>
         </events>
+-->
     </global>
 </config>
