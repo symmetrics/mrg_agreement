@@ -5,7 +5,7 @@
 # =============================================================================
 NAME = 'symmetrics_module_agreement'
 
-TAGS = ('magento', 'config', 'german', 'agb', 'agreement')
+TAGS = ('magento', 'config', 'german', 'agb', 'agreement', 'germanconfig')
 
 LICENSE = 'AFL 3.0'
 
