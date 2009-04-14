@@ -34,9 +34,9 @@ AUTHORS = {
 INFO = 'Rendering füs AGB-Feld in der Bestellung'
 
 SUMMARY = '''
-	Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
-	{{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
-	zu dem Symmetrics_Impressum Modul
+    Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
+    {{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
+    zu dem Symmetrics_Impressum Modul
 '''
 
 NOTES = '''
@@ -52,12 +52,12 @@ EXCLUDES = {
 }
 
 DEPENDS_ON_FILES = (
-	'app/code/core/Mage/Checkout/Block/Agreements.php',
-	'app/code/core/Mage/Checkout/Model/Agreement.php'
+    'app/code/core/Mage/Checkout/Block/Agreements.php',
+    'app/code/core/Mage/Checkout/Model/Agreement.php'
 )
 
 PEAR_KEY = ''
 
 COMPATIBLE_WITH = {
-    'magento': '1.3.0',
+    'magento': '1.3.0'
 }
