@@ -34,9 +34,9 @@ AUTHORS = {
 INFO = 'Rendering füs AGB-Feld in der Bestellung'
 
 SUMMARY = '''
-Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
-{{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
-zu dem Symmetrics_Impressum Modul
+	Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
+	{{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
+	zu dem Symmetrics_Impressum Modul
 '''
 
 NOTES = '''
