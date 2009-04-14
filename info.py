@@ -1,46 +1,63 @@
 # encoding: utf-8
 
+# =============================================================================
 # package info
-name = 'symmetrics_module_agreement'
-tags = ('magento', 'config', 'german', 'symmetrics', 'agb', 'agreement')
+# =============================================================================
+NAME = 'symmetrics_module_agreement'
 
-# relations
-requires = {
-}
-excludes = {
-}
+TAGS = ('magento', 'config', 'german', 'agb', 'agreement')
 
-# who is responsible for this package?
-team_leader = {
+LICENSE = 'AFL 3.0'
+
+HOMEPAGE = 'http://www.symmetrics.de'
+
+INSTALL_PATH = ''
+
+# =============================================================================
+# responsibilities
+# =============================================================================
+TEAM_LEADER = {
     'Sergej Braznikov': 'sb@symmetrics.de'
 }
 
-# who should check this package in the first place?
-maintainer = {
+MAINTAINER = {
     'Eugen Gitin': 'eg@symmetrics.de'
 }
 
-# relative installation path (e.g. app/code/local)
-install_path = ''
+AUTHORS = {
+    'Eugen Gitin': 'eg@symmetrics.de'
+}
 
+# =============================================================================
 # additional infos
-info = 'Rendering füs AGB-Feld in der Bestellung'
-summary = '''
-	Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
-	{{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
-	zu dem Symmetrics_Impressum Modul
-'''
-notes = '''
+# =============================================================================
+INFO = 'Rendering füs AGB-Feld in der Bestellung'
 
+SUMMARY = '''
+Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
+{{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
+zu dem Symmetrics_Impressum Modul
 '''
-license = 'AFL 3.0'
-authors = {
-    'Eugen Gitin': 'eg@symmetrics.de'
+
+NOTES = '''
+'''
+
+# =============================================================================
+# relations
+# =============================================================================
+REQUIRES = {
 }
-homepage = 'http://www.symmetrics.de'
 
-# files this package depends on
-depends_on_files = (
+EXCLUDES = {
+}
+
+DEPENDS_ON_FILES = (
 	'app/code/core/Mage/Checkout/Block/Agreements.php',
 	'app/code/core/Mage/Checkout/Model/Agreement.php'
 )
+
+PEAR_KEY = ''
+
+COMPATIBLE_WITH = {
+    '1.3'
+}
