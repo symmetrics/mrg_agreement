@@ -9,7 +9,7 @@
 <config>
 	<modules>
 		<Symmetrics_Agreement>
-			<version>0.2.0</version>
+			<version>0.2.1</version>
 			<depends />
 		</Symmetrics_Agreement>
 	</modules>
@@ -28,5 +28,25 @@
                 </rewrite>
             </checkout>
 		</blocks>
+        <resources>
+            <agreement_setup>
+                <setup>
+                    <module>Symmetrics_Agreement</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </agreement_setup>
+            <agreement_setup>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </agreement_setup>
+            <agreement_setup>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </agreement_setup>
+        </resources>
     </global>
 </config>
