@@ -7,10 +7,22 @@ $installer->startSetup();
 
 $query = <<< EOF
 INSERT INTO `checkout_agreement` (`name`, `content`, `content_height`, `checkbox_text`, `is_active`, `is_html`) VALUES
-('AGB', '{{block type="cms/block" block_id="sym_agb"}}', '', 'Hiermit werden die Allgemeinen Geschäftsbedingungen und die Widerrufsbelehrung akzeptiert.', 1, 1);
+('AGB', '{{block type="cms/block" block_id="sym_agb"}}', '', 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.', 1, 1);
 EOF;
 $installer->run($query);
 	
+$newEntityId = $installer->getConnection()->lastInsertId();
+$query = <<< EOF
+INSERT INTO `checkout_agreement_store` (`agreement_id`, `store_id`) VALUES ('$newEntityId', '0');
+EOF;
+$installer->run($query);
+
+$query = <<< EOF
+INSERT INTO `checkout_agreement` (`name`, `content`, `content_height`, `checkbox_text`, `is_active`, `is_html`) VALUES
+('Widerrufsbelehrung', '{{block type="cms/block" block_id="sym_widerruf"}}', '', 'Ich habe die Widerrufsbelehrung gelesen und stimme diesen ausdrücklich zu.', 1, 1);
+EOF;
+$installer->run($query);
+    
 $newEntityId = $installer->getConnection()->lastInsertId();
 $query = <<< EOF
 INSERT INTO `checkout_agreement_store` (`agreement_id`, `store_id`) VALUES ('$newEntityId', '0');
@@ -53,5 +65,7 @@ if($insert == true)
     $query = "INSERT INTO `cms_block_store` (`block_id`, `store_id`) VALUES ('$newEntityId', '0');";
     $installer->run($query);
 }
+
+$installer->setConfigData('checkout/options/enable_agreements', '1');
 
 $installer->endSetup();
