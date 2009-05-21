@@ -1,6 +1,5 @@
 <?php
 
-$configData = Mage::getConfig()->getNode('default/agreement_setup')->asArray();
 $dateTime = date('Y-m-d H:i:s');
 
 $installer = $this;
@@ -31,11 +30,25 @@ EOF;
 
 $germanConfig = Mage::getConfig()->getNode('modules/Symmetrics_ConfigGerman');
 
-if($germanConfig->active != 'true')
+$insert = false;
+
+if(is_object($germanConfig))
+{
+	if($germanConfig->active != 'true')
+	{
+        $insert = true;
+	}
+}
+else
+{
+	$insert = true;
+}
+
+if($insert == true)
 {
     $query = "INSERT INTO `cms_block` (`title`, `identifier`, `content`, `creation_time`, `update_time`, `is_active`) VALUES ('AGB', 'sym_agb', '', '$dateTime', '$dateTime', 1);";
     $installer->run($query);
-    
+
     $newEntityId = $installer->getConnection()->lastInsertId();
     $query = "INSERT INTO `cms_block_store` (`block_id`, `store_id`) VALUES ('$newEntityId', '0');";
     $installer->run($query);
