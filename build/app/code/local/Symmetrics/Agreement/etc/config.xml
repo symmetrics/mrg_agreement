@@ -21,13 +21,6 @@
 				</rewrite>
 			</checkout>
 		</models>
-		<blocks>
-            <checkout>
-                <rewrite>
-                    <agreements>Symmetrics_Agreement_Block_Agreement</agreements>
-                </rewrite>
-            </checkout>
-		</blocks>
         <resources>
             <agreement_setup>
                 <setup>
