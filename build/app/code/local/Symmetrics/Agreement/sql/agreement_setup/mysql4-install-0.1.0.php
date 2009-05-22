@@ -43,7 +43,7 @@ $installer->run($query);
 
 $query = <<< EOF
 INSERT INTO `cms_page` (`title`, `root_template`, `meta_keywords`, `meta_description`, `identifier`, `content`, `creation_time`, `update_time`, `is_active`, `sort_order`, `layout_update_xml`, `custom_theme`, `custom_theme_from`, `custom_theme_to`) VALUES
-('Widerrufsbelehrung', 'one_column', '', '', 'agb', '{{block type="cms/block" block_id="sym_widerruf"}}', '$dateTime', '$dateTime', 1, 0, '', '', NULL, NULL);
+('Widerrufsbelehrung', 'one_column', '', '', 'widerruf', '{{block type="cms/block" block_id="sym_widerruf"}}', '$dateTime', '$dateTime', 1, 0, '', '', NULL, NULL);
 EOF;
 $installer->run($query);
     
