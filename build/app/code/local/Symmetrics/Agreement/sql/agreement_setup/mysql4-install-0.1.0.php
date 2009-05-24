@@ -57,20 +57,16 @@ $germanConfig = Mage::getConfig()->getNode('modules/Symmetrics_ConfigGerman');
 
 $insert = false;
 
-if(is_object($germanConfig))
-{
-	if($germanConfig->active != 'true')
-	{
+if (is_object($germanConfig)) {
+	if ($germanConfig->active != 'true') {
         $insert = true;
 	}
 }
-else
-{
+else {
 	$insert = true;
 }
 
-if($insert == true)
-{
+if ($insert == true) {
     $query = "INSERT INTO `cms_block` (`title`, `identifier`, `content`, `creation_time`, `update_time`, `is_active`) VALUES ('AGB', 'sym_agb', '', '$dateTime', '$dateTime', 1);";
     $installer->run($query);
 
