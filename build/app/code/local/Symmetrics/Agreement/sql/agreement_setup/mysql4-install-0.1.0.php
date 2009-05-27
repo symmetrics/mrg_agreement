@@ -53,25 +53,31 @@ INSERT INTO `cms_page_store` (`page_id`, `store_id`) VALUES ('$newEntityId', '0'
 EOF;
 $installer->run($query);
 
-$germanConfig = Mage::getConfig()->getNode('modules/Symmetrics_ConfigGerman');
+$agbBlock = $installer->getConnection()->fetchRow("
+    SELECT COUNT(block_id) AS counter FROM {$installer->getTable('cms_block')} WHERE identifier='sym_agb'
+");
 
-$insert = false;
-
-if(is_object($germanConfig))
+if($agbBlock['counter'] == 0)
 {
-	if($germanConfig->active != 'true')
-	{
-        $insert = true;
-	}
+    $query = <<< EOF
+    INSERT INTO `cms_block` (`title`, `identifier`, `content`, `creation_time`, `update_time`, `is_active`) VALUES ('AGB', 'sym_agb', '<h2>AGB</h2><p>[MUSTER]</p>', '$dateTime', '$dateTime', 1);
+EOF;
+    $installer->run($query);
+
+    $newEntityId = $installer->getConnection()->lastInsertId();
+    $query = "INSERT INTO `cms_block_store` (`block_id`, `store_id`) VALUES ('$newEntityId', '0');";
+    $installer->run($query);
 }
-else
-{
-	$insert = true;
-}
 
-if($insert == true)
+$widerrufBlock = $installer->getConnection()->fetchRow("
+    SELECT COUNT(block_id) AS counter FROM {$installer->getTable('cms_block')} WHERE identifier='sym_widerruf'
+");
+
+if($widerrufBlock['counter'] == 0)
 {
-    $query = "INSERT INTO `cms_block` (`title`, `identifier`, `content`, `creation_time`, `update_time`, `is_active`) VALUES ('AGB', 'sym_agb', '', '$dateTime', '$dateTime', 1);";
+    $query = <<< EOF
+    INSERT INTO `cms_block` (`title`, `identifier`, `content`, `creation_time`, `update_time`, `is_active`) VALUES ('Widerrufsbelehrung', 'sym_widerruf', '<h2>Widerrufsbelehrung</h2><p>[MUSTER]</p>', '$dateTime', '$dateTime', 1);
+EOF;
     $installer->run($query);
 
     $newEntityId = $installer->getConnection()->lastInsertId();
