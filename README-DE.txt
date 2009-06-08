@@ -2,17 +2,13 @@
 Installation
 ----------------------------------------------------
 
-1. Ordner Symmetrics/Agreement nach 
-app/code/local oder app/code/community kopieren.
+1. Ordner app/ in den Projekt-Root kopieren.
 
-2. Datei app/etc/modules/Symmetrics_Agreement.xml
-nach app/etc/modules/ kopieren.
+2. Cache löschen
 
-3. Cache löschen
+3. Frontend aufrufen
 
-4. Frontend aufrufen
-
-5. Fertig!
+4. Fertig!
 
 ----------------------------------------------------
 Beschreibung
