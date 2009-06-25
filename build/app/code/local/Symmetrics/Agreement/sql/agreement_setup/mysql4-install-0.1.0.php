@@ -19,7 +19,7 @@ $installer->run($query);
 
 $query = <<< EOF
 INSERT INTO `checkout_agreement` (`name`, `content`, `content_height`, `checkbox_text`, `is_active`, `is_html`) VALUES
-('Widerrufsbelehrung', '{{block type="cms/block" block_id="sym_widerruf"}}', '', 'Ich habe die Widerrufsbelehrung gelesen und stimme diesen ausdrücklich zu.', 1, 1);
+('Widerrufsbelehrung', '{{block type="cms/block" block_id="sym_widerruf"}}', '', 'Ich habe die Widerrufsbelehrung gelesen.', 1, 1);
 EOF;
 $installer->run($query);
     
