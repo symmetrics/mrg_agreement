@@ -10,8 +10,7 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
 {
     public function createCmsPage($pageData)
     {
-
-        if(is_array($pageData)) {
+        if (is_array($pageData)) {
             foreach($pageData as $key => $value) {
                 $data[$key] = $value;
             }
@@ -23,7 +22,6 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
         }
 
         $model = Mage::getModel('cms/page');
-
         $page = $model->load($pageData['identifier']);
 
         if (! $page->getId()) {
@@ -37,12 +35,10 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
 
     public function createCmsBlock($blockData)
     {
-        
         $blockData['stores'] = array('1');
         $blockData['is_active'] = '1';
 
         $model = Mage::getModel('cms/block');
-
         $block = $model->load($blockData['identifier']);
 
         if (! $block->getId()) {
