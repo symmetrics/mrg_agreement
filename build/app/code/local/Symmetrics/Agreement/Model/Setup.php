@@ -14,7 +14,7 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
             foreach($pageData as $key => $value) {
                 $data[$key] = $value;
             }
-            $data['stores'] = array('1');
+            $data['stores'] = array('0');
             $data['is_active'] = '1';
         }
         else {
@@ -35,7 +35,7 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
 
     public function createCmsBlock($blockData)
     {
-        $blockData['stores'] = array('1');
+        $blockData['stores'] = array('0');
         $blockData['is_active'] = '1';
 
         $model = Mage::getModel('cms/block');
