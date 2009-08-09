@@ -4,6 +4,10 @@
 		<Symmetrics_Agreement>
 			<active>true</active>
 			<codePool>local</codePool>
+			<depends>
+            	<Mage_Cms />
+            	<Mage_Checkout />
+			</depends>
 		</Symmetrics_Agreement>     
 	</modules>
 </config>
