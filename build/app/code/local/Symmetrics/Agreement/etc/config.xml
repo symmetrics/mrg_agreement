@@ -12,7 +12,6 @@
 	<modules>
 		<Symmetrics_Agreement>
 			<version>0.2.5</version>
-			<depends />
 		</Symmetrics_Agreement>
 	</modules>
 	<global>
