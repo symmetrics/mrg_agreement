@@ -11,7 +11,7 @@
 <config>
 	<modules>
 		<Symmetrics_Agreement>
-			<version>0.2.5</version>
+			<version>0.2.8</version>
 		</Symmetrics_Agreement>
 	</modules>
 	<global>
