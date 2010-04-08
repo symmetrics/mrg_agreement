@@ -69,11 +69,12 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
     /**
      * Collect data and create CMS block
      *
-     * @param array $blockData cms block data
+     * @param array   $blockData cms block data
+     * @param boolean $override  override cms block if it exists
      *
      * @return void
      */
-    public function createCmsBlock($blockData)
+    public function createCmsBlock($blockData, $override=true)
     {
         $blockData['stores'] = array('0');
         $blockData['is_active'] = '1';
@@ -81,8 +82,10 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
         $model = Mage::getModel('cms/block');
         $block = $model->load($blockData['identifier']);
 
-        if (! $block->getId()) {
-            $model->setData($blockData)->save();
+        if (!$block->getId()) {
+            if ($override) {
+                $model->setData($blockData)->save();
+            }
         } else {
             $data['block_id'] = $block->getId();
             $model->setData($blockData)->save();
