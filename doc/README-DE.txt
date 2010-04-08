@@ -1,26 +1,16 @@
-----------------------------------------------------
-Installation
-----------------------------------------------------
+* DOCUMENTATION
 
-1. Ordner app/ in den Projekt-Root kopieren.
+** INSTALLATION
+Extrahieren Sie den Inhalt dieses Archivs in Ihr Magento Verzeichnis.
 
-2. Cache löschen
-
-3. Frontend aufrufen
-
-4. Fertig!
-
-----------------------------------------------------
-Beschreibung
-----------------------------------------------------
-
+** USAGE
 Das Modul erstellt Bestellbedingungen (AGBs und 
 Widerrufsbelehrung), die vom Kunden am Ende der Bestellung
-akzeptiert werden muessen. Zusaetzlich fuegt das Modul
-die Moeglichkeit hinzu im Feld wo im Checkout die
-Texte angezeigt werden Blockaufrufe wie {{block type ...}}
+akzeptiert werden müssen. Zusützlich fügt das Modul
+die Möglichkeit hinzu im Feld, in welchem im Checkout die
+Texte angezeigt werden, Blockaufrufe wie {{block type ...}}
 zu verwenden. Die Blocks selbst werden von diesem Modul
-nicht erstellt. Diese muessen entweder manuell ueber
+nicht erstellt. Diese müssen entweder manuell über
 CMS - Static Blocks oder mithilfe des Moduls
 Symmetrics_ConfigGermanTexts erstellt werden. Die 
 Blocks (Identifier) muessen "sym_agb" und "sym_widerruf"
@@ -28,20 +18,26 @@ heissen.
 
 Symmetrics_Agreement erstellt auch die CMS-Seiten
 AGB und Widerruf, die mit Symmetrics_ConfigGermanTexts
-oder manuell mit Texten gefuellt werden.
-
-Features:
-
-- Erstellt Seiten AGB und Widerruf
-- Fuegt Rendering fuer das Feld "Bestellbedingungen" im
-Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
-verwendet werden koennen.
-
-----------------------------------------------------
-Funktonalitaet und Besonderheiten
-----------------------------------------------------
-
+oder manuell mit Texten gefüllt werden.
 Das Modul arbeitet eng mit dem Modul 
-Symmetrics_ConfigGermanTexts zusammen und es ist
-deswegen empfehlenswert dieses Modul zusammen mit
-Symmetrics_Agreement zu nutzen.
+
+
+
+** FUNCTIONALITY
+*** A: Erstellt Seiten AGB und Widerruf
+*** B: Fügt Rendering für das Feld "Bestellbedingungen" im
+        Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
+        verwendet werden koennen.
+
+** TECHNINCAL
+
+
+
+** PROBLEMS
+
+* TESTCASES
+** BASIC
+
+** CATCHABLE
+
+** STRESS

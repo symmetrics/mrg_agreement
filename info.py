@@ -5,7 +5,8 @@
 # =============================================================================
 NAME = 'symmetrics_module_agreement'
 
-TAGS = ('magento', 'config', 'german', 'agb', 'agreement', 'germanconfig', 'locpack')
+TAGS = ('magento', 'config', 'german', 'agb', 'agreement', 'germanconfig',
+        'locpack', 'module', 'php')
 
 LICENSE = 'AFL 3.0'
 
@@ -21,11 +22,13 @@ TEAM_LEADER = {
 }
 
 MAINTAINER = {
-    'Eugen Gitin': 'eg@symmetrics.de'
+    'Eugen Gitin': 'eg@symmetrics.de',
+    'Eric Reiche': 'er@symmetrics.de'
 }
 
 AUTHORS = {
-    'Eugen Gitin': 'eg@symmetrics.de'
+    'Eugen Gitin': 'eg@symmetrics.de',
+    'Eric Reiche': 'er@symmetrics.de'
 }
 
 # =============================================================================
@@ -60,6 +63,6 @@ DEPENDS_ON_FILES = (
 PEAR_KEY = ''
 
 COMPATIBLE_WITH = {
-    'magento': ['1.3.2.1', '1.3.2.3', '1.3.2.4', '1.4.0.0'],
-	'magento_enterprise': ['1.3.2.4', '1.7.0.0'],
+    'magento': ['1.4.0.0'],
+	'magento_enterprise': ['1.7.0.0'],
 }
