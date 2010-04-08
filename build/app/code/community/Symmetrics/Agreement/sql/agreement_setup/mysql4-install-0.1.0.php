@@ -25,56 +25,61 @@
 $installer = $this;
 $installer->startSetup();
 
-$data = array();
+$agreements = array();
+$blocks = array();
+$pages = array();
+
 // creating agreements for the order process. they will be shown at the end of the checkout.
-$data[] = array(
+// AGREEMENTS
+$agreements[] = array(
     'name' => 'AGB',
     'content' => '{{block type="cms/block" block_id="agb"}}',
     'checkbox_text' => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.'
 );
 
-$data[] = array(
+$agreements[] = array(
     'name' => 'Widerrufsbelehrung',
     'content' => '{{block type="cms/block" block_id="widerruf"}}',
     'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.'
 );
-foreach ($data as $agreement) {
-    $this->createAgreement($agreement);
-}
 
-$data = array();
+// CMS PAGES
 
-$data[] = array(
+$pages[] = array(
     'title' => 'AGB',
     'root_template' => 'one_column',
     'identifier' => 'agb',
     'content' => '{{block type="cms/block" block_id="agb"}}'
 );
 
-$data[] = array(
+$pages[] = array(
     'title' => 'Widerrufsbelehrung',
     'root_template' => 'one_column',
     'identifier' => 'widerruf',
     'content' => '{{block type="cms/block" block_id="widerruf"}}'
 );
-foreach ($data as $page) {
-    $this->createCmsPage($page);
-}
 
-$data = array();
+// CMS BLOCKS
 
-$data[] = array(
+$blocks[] = array(
     'title' => 'AGB',
     'identifier' => 'sym_agb',
     'content' => '<h2>AGB</h2><p>[MUSTER]</p>'
 );
 
-$data[] = array(
+$blocks[] = array(
     'title' => 'Widerrufsbelehrung',
     'identifier' => 'sym_widerruf',
     'content' => '<h2>Widerrufsbelehrung</h2><p>[MUSTER]</p>'
 );
-foreach ($data as $block) {
+
+foreach ($pages as $page) {
+    $this->createCmsPage($page);
+}
+foreach ($agreements as $agreement) {
+    $this->createAgreement($agreement);
+}
+foreach ($blocks as $block) {
     $this->createCmsBlock($block, false);
 }
 
