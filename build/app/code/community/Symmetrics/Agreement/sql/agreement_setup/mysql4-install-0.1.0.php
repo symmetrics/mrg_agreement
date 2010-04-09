@@ -48,14 +48,14 @@ $agreements[] = array(
 $pages[] = array(
     'title' => 'AGB',
     'root_template' => 'one_column',
-    'identifier' => 'widerruf',
+    'identifier' => 'agb',
     'content' => '{{block type="cms/block" block_id="symmetrics_business_terms"}}'
 );
 
 $pages[] = array(
     'title' => 'Widerrufsbelehrung',
     'root_template' => 'one_column',
-    'identifier' => 'abg',
+    'identifier' => 'widerruf',
     'content' => '{{block type="cms/block" block_id="widerruf"}}'
 );
 
