@@ -109,4 +109,34 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
         $agreement->setData($agreementData)
             ->save();
     }
+    
+    /**
+     * Update CMS pages if upgrading from previous versions
+     *
+     * @return void
+     */
+    public function updatePages()
+    {
+        
+    }
+    
+    /**
+     * Update CMS blocks if upgrading from previous versions
+     *
+     * @return void
+     */
+    public function updateBlocks()
+    {
+        
+    }
+    
+    /**
+     * Update agreements if upgrading from previous versions
+     *
+     * @return void
+     */
+    public function updateAgreements()
+    {
+        
+    }
 }
