@@ -56,7 +56,7 @@ $pages[] = array(
     'title' => 'Widerrufsbelehrung',
     'root_template' => 'one_column',
     'identifier' => 'widerruf',
-    'content' => '{{block type="cms/block" block_id="widerruf"}}'
+    'content' => '{{block type="cms/block" block_id="symmetrics_revocation"}}'
 );
 
 // CMS BLOCKS
