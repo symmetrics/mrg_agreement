@@ -35,63 +35,7 @@
  * @link      http://www.symmetrics.de/
  */
 class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
-{
-    /**
-     * Collect data and create CMS page
-     *
-     * @param array $pageData cms page data
-     *
-     * @return void
-     */
-    public function createCmsPage($pageData)
-    {
-        if (is_array($pageData)) {
-            foreach ($pageData as $key => $value) {
-                $data[$key] = $value;
-            }
-            $data['stores'] = array('0');
-            $data['is_active'] = '1';
-        } else {
-            return;
-        }
-
-        $model = Mage::getModel('cms/page');
-        $page = $model->load($pageData['identifier']);
-
-        if (!$page->getId()) {
-            $model->setData($data)->save();
-        } else {
-            $data['page_id'] = $page->getId();
-            $model->setData($data)->save();
-        }
-    }
-    
-    /**
-     * Collect data and create CMS block
-     *
-     * @param array   $blockData cms block data
-     * @param boolean $override  override cms block if it exists
-     *
-     * @return void
-     */
-    public function createCmsBlock($blockData, $override=true)
-    {
-
-        $model = Mage::getModel('cms/block');
-        $block = $model->load($blockData['identifier']);
-
-        if (!$block->getId()) {
-            $blockData['stores'] = array('0');
-            $blockData['is_active'] = '1';
-            $model->setData($blockData)->save();
-        } else {
-            if ($override) {
-                $data['block_id'] = $block->getId();
-                $model->setData($blockData)->save();
-            }
-        }
-    }
-    
+{    
     /**
      * Collect data and create agreement
      *
@@ -108,25 +52,6 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
         $agreement = Mage::getModel('checkout/agreement');
         $agreement->setData($agreementData)
             ->save();
-    }
-    
-    /**
-     * Update CMS pages if upgrading from previous versions
-     *
-     * @return void
-     */
-    public function updatePages()
-    {
-        /**
-         * @var $pageCollection Mage_Cms_Model_Mysql4_Page_Collection
-         */
-        $pageCollection = Mage::getModel('cms/page')->getCollection();
-        foreach ($pageCollection as $page) {
-            $content = $page->getContent();
-            $content = $this->_replaceContent($content);
-            $page->setContent($content)
-                ->save();
-        }
     }
     
     /**
@@ -254,34 +179,6 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
         $content = str_replace($replaceStrings['search'], $replaceStrings['replace'], $content);
 
         return $content;
-    }
-    
-    /**
-     * Update CMS blocks if upgrading from previous versions
-     *
-     * @return void
-     */
-    public function updateBlocks()
-    {
-        /**
-         * @var $blockCollection Mage_Cms_Model_Mysql4_Block_Collection
-         */
-        $blockCollection = Mage::getModel('cms/block')->getCollection();
-        foreach ($blockCollection as $block) {
-            $storeurls = false;
-            if ($block->getIdentifier() == 'sym_agb') {
-                $block->setIdentifier('symmetrics_business_terms');
-                $storeurls = true;
-            }
-            if ($block->getIdentifier() == 'sym_widerruf') {
-                $block->setIdentifier('symmetrics_revocation');
-                $storeurls = true;
-            }
-            $content = $block->getContent();
-            $content = $this->_replaceContent($content, $storeurls);
-            $block->setContent($content)
-                ->save();
-        }
     }
     
     /**

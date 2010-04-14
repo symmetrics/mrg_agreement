@@ -26,8 +26,6 @@ $installer = $this;
 $installer->startSetup();
 
 $agreements = array();
-$blocks = array();
-$pages = array();
 
 // creating agreements for the order process. they will be shown at the end of the checkout.
 // AGREEMENTS
@@ -43,44 +41,8 @@ $agreements[] = array(
     'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.'
 );
 
-// CMS PAGES
-
-$pages[] = array(
-    'title' => 'AGB',
-    'root_template' => 'one_column',
-    'identifier' => 'agb',
-    'content' => '{{block type="cms/block" block_id="symmetrics_business_terms"}}'
-);
-
-$pages[] = array(
-    'title' => 'Widerrufsbelehrung',
-    'root_template' => 'one_column',
-    'identifier' => 'widerruf',
-    'content' => '{{block type="cms/block" block_id="symmetrics_revocation"}}'
-);
-
-// CMS BLOCKS
-
-$blocks[] = array(
-    'title' => 'AGB',
-    'identifier' => 'symmetrics_business_terms',
-    'content' => '<h2>AGB</h2><p>[MUSTER]</p>'
-);
-
-$blocks[] = array(
-    'title' => 'Widerrufsbelehrung',
-    'identifier' => 'symmetrics_revocation',
-    'content' => '<h2>Widerrufsbelehrung</h2><p>[MUSTER]</p>'
-);
-
-foreach ($pages as $page) {
-    $this->createCmsPage($page);
-}
 foreach ($agreements as $agreement) {
     $this->createAgreement($agreement);
-}
-foreach ($blocks as $block) {
-    $this->createCmsBlock($block, false);
 }
 
 $installer->setConfigData('checkout/options/enable_agreements', '1');

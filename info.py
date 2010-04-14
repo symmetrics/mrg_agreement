@@ -18,7 +18,7 @@ INSTALL_PATH = ''
 # responsibilities
 # =============================================================================
 TEAM_LEADER = {
-    'Sergej Braznikov': 'sb@symmetrics.de'
+    'Torsten Walluhn': 'tw@symmetrics.de'
 }
 
 MAINTAINER = {
@@ -39,7 +39,7 @@ INFO = 'Rendering füs AGB-Feld in der Bestellung'
 SUMMARY = '''
     Fügt die Möglichkeit hinzu in den AGBs am Ende der Bestellung
     {{block ... }} Variablen zu verwenden. Sinnvoll ist die Verbindung
-    zu dem Symmetrics_Impressum Modul
+    zu dem Symmetrics_Imprint Modul
 '''
 
 NOTES = '''
@@ -49,14 +49,14 @@ NOTES = '''
 # relations
 # =============================================================================
 REQUIRES = [
-	{'magento': '*', 'magento_enterprise': '*'}
+	{'magento': '*', 'magento_enterprise': '*'},
+	{'symmetrics_config_texts_german': '*'}
 ]
 
 EXCLUDES = {
 }
 
 DEPENDS_ON_FILES = (
-    'app/code/core/Mage/Checkout/Block/Agreements.php',
     'app/code/core/Mage/Checkout/Model/Agreement.php'
 )
 

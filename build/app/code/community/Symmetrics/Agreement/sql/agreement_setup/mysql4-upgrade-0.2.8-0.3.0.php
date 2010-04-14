@@ -25,8 +25,6 @@
 $installer = $this;
 $installer->startSetup();
 
-$this->updatePages();
-$this->updateBlocks();
 $this->updateAgreements();
 
 $installer->endSetup();
