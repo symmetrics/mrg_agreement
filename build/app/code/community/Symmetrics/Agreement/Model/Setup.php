@@ -92,7 +92,6 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
     {
         $model = Mage::getModel('cms/block');
         $block = $model->load($blockData['identifier']);
-        $blockData['content'] = $this->getTemplateContent($blockData['text']);
         if (!$block->getId()) {
             $blockData['stores'] = array('0');
             $blockData['is_active'] = '1';
