@@ -33,13 +33,13 @@ $pages = array();
 // AGREEMENTS
 $agreements[] = array(
     'name' => 'AGB',
-    'content' => '{{block type="cms/block" block_id="symmetrics_business_terms"}}',
+    'content' => '{{block type="cms/block" block_id="mrg_business_terms"}}',
     'checkbox_text' => 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und stimme diesen ausdrücklich zu.'
 );
 
 $agreements[] = array(
     'name' => 'Widerrufsbelehrung',
-    'content' => '{{block type="cms/block" block_id="symmetrics_revocation"}}',
+    'content' => '{{block type="cms/block" block_id="mrg_revocation"}}',
     'checkbox_text' => 'Ich habe die Widerrufsbelehrung gelesen.'
 );
 
@@ -49,27 +49,27 @@ $pages[] = array(
     'title' => 'AGB',
     'root_template' => 'one_column',
     'identifier' => 'agb',
-    'content' => '{{block type="cms/block" block_id="symmetrics_business_terms"}}'
+    'content' => '{{block type="cms/block" block_id="mrg_business_terms"}}'
 );
 
 $pages[] = array(
     'title' => 'Widerrufsbelehrung',
     'root_template' => 'one_column',
     'identifier' => 'widerruf',
-    'content' => '{{block type="cms/block" block_id="symmetrics_revocation"}}'
+    'content' => '{{block type="cms/block" block_id="mrg_revocation"}}'
 );
 
 // CMS BLOCKS
 
 $blocks[] = array(
     'title' => 'AGB',
-    'identifier' => 'symmetrics_business_terms',
+    'identifier' => 'mrg_business_terms',
     'content' => '<h2>AGB</h2><p>[MUSTER]</p>'
 );
 
 $blocks[] = array(
     'title' => 'Widerrufsbelehrung',
-    'identifier' => 'symmetrics_revocation',
+    'identifier' => 'mrg_revocation',
     'content' => '<h2>Widerrufsbelehrung</h2><p>[MUSTER]</p>'
 );
 
