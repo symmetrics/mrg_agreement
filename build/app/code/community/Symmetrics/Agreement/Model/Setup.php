@@ -73,10 +73,10 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
         $page = $model->load($pageData['identifier']);
 
         if (!$page->getId()) {
-            $model->setData($data)->save();
+            $model->setData($pageData)->save();
         } else {
-            $data['page_id'] = $page->getId();
-            $model->setData($data)->setId($data['page_id'])->save();
+            $pageData['page_id'] = $page->getId();
+            $model->setData($pageData)->setId($pageData['page_id'])->save();
         }
     }
     
