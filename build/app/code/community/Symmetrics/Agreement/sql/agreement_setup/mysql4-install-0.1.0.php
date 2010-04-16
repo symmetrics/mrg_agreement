@@ -80,7 +80,7 @@ foreach ($agreements as $agreement) {
     $this->createAgreement($agreement);
 }
 foreach ($blocks as $block) {
-    $this->createCmsBlock($block, false);
+    $this->createCmsBlock($block);
 }
 
 $installer->setConfigData('checkout/options/enable_agreements', '1');
