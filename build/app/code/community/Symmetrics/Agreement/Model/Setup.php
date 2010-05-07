@@ -17,7 +17,7 @@
  * @author    symmetrics gmbh <info@symmetrics.de>
  * @author    Eric Reiche <er@symmetrics.de>
  * @author    Eugen Gitin <eg@symmetrics.de>
- * @copyright 2010 symmetrics gmbh
+ * @copyright 2009-2010 symmetrics gmbh
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://www.symmetrics.de/
  */
@@ -30,12 +30,12 @@
  * @author    symmetrics gmbh <info@symmetrics.de>
  * @author    Eric Reiche <er@symmetrics.de>
  * @author    Eugen Gitin <eg@symmetrics.de>
- * @copyright 2010 symmetrics gmbh
+ * @copyright 2009-2010 symmetrics gmbh
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://www.symmetrics.de/
  */
 class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
-{    
+{
     /**
      * Collect data and create agreement
      *

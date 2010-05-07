@@ -2,6 +2,7 @@
 
 ** INSTALLATION
 Extrahieren Sie den Inhalt dieses Archivs in Ihr Magento Verzeichnis.
+Ggf. ist das Leeren/Auffrischen des Magento-Caches notwendig.
 
 ** USAGE
 Das Modul erstellt Bestellbedingungen (AGBs und 
@@ -31,13 +32,14 @@ oder manuell mit Texten gefüllt werden.
 *** E: Bindet die unter b) erstellen Blöcke in den agreeements
         ein.
 
-** TECHNINCAL
+** TECHNICAL
 Überschreibt den Block Mage_Checkout_Model_Agreement und wendet
 den Standardtemplate-Filter auf den Inhalt der Agreements an.
 Via Migrationsskript werden die Seiten, Blöcke und Agreements
 erstellt.
 
 ** PROBLEMS
+Zur Zeit sind keine Probleme bekannt.
 
 * TESTCASES
 ** BASIC
@@ -51,7 +53,3 @@ erstellt.
 *** E: Prüfen Sie, ob in den Agreements die Blöcke "mrg_business_terms"
         und "mrg_revocation" via {{block}} Aufruf eingebunden werden und
         funktionieren.
-
-** CATCHABLE
-
-** STRESS
