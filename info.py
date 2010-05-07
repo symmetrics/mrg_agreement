@@ -18,17 +18,17 @@ INSTALL_PATH = ''
 # responsibilities
 # =============================================================================
 TEAM_LEADER = {
-    'Torsten Walluhn': 'tw@symmetrics.de'
+    'Torsten Walluhn': 'tw@symmetrics.de',
 }
 
 MAINTAINER = {
     'Eugen Gitin': 'eg@symmetrics.de',
-    'Eric Reiche': 'er@symmetrics.de'
+    'Eric Reiche': 'er@symmetrics.de',
 }
 
 AUTHORS = {
     'Eugen Gitin': 'eg@symmetrics.de',
-    'Eric Reiche': 'er@symmetrics.de'
+    'Eric Reiche': 'er@symmetrics.de',
 }
 
 # =============================================================================
@@ -49,19 +49,19 @@ NOTES = '''
 # relations
 # =============================================================================
 REQUIRES = [
-	{'magento': '*', 'magento_enterprise': '*'}
+    {'magento': '*', 'magento_enterprise': '*'},
 ]
 
 EXCLUDES = {
 }
 
 DEPENDS_ON_FILES = (
-    'app/code/core/Mage/Checkout/Model/Agreement.php'
+    'app/code/core/Mage/Checkout/Model/Agreement.php',
 )
 
 PEAR_KEY = ''
 
 COMPATIBLE_WITH = {
     'magento': ['1.4.0.0'],
-	'magento_enterprise': ['1.7.0.0'],
+    'magento_enterprise': ['1.8.0.0'],
 }
