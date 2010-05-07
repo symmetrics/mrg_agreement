@@ -83,8 +83,7 @@ class Symmetrics_Agreement_Model_Setup extends Mage_Eav_Model_Entity_Setup
     /**
      * Collect data and create CMS block
      *
-     * @param array   $blockData cms block data
-     * @param boolean $override  override cms block if it exists
+     * @param array $blockData cms block data
      *
      * @return void
      */
