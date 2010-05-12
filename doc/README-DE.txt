@@ -1,47 +1,52 @@
-----------------------------------------------------
-Installation
-----------------------------------------------------
+* DOCUMENTATION
 
-1. Ordner app/ in den Projekt-Root kopieren.
+** INSTALLATION
+Extrahieren Sie den Inhalt dieses Archivs in Ihr Magento Verzeichnis.
+Ggf. ist das Leeren/Auffrischen des Magento-Caches notwendig.
 
-2. Cache löschen
-
-3. Frontend aufrufen
-
-4. Fertig!
-
-----------------------------------------------------
-Beschreibung
-----------------------------------------------------
-
+** USAGE
 Das Modul erstellt Bestellbedingungen (AGBs und 
 Widerrufsbelehrung), die vom Kunden am Ende der Bestellung
-akzeptiert werden muessen. Zusaetzlich fuegt das Modul
-die Moeglichkeit hinzu im Feld wo im Checkout die
-Texte angezeigt werden Blockaufrufe wie {{block type ...}}
+akzeptiert werden müssen. Zusützlich fügt das Modul
+die Möglichkeit hinzu im Feld, in welchem im Checkout die
+Texte angezeigt werden, Blockaufrufe wie {{block type ...}}
 zu verwenden. Die Blocks selbst werden von diesem Modul
-nicht erstellt. Diese muessen entweder manuell ueber
+nicht erstellt. Diese müssen entweder manuell über
 CMS - Static Blocks oder mithilfe des Moduls
 Symmetrics_ConfigGermanTexts erstellt werden. Die 
-Blocks (Identifier) muessen "sym_agb" und "sym_widerruf"
-heissen. 
+Blocks (Identifier) muessen "mrg_business_terms"
+und "mrg_revocation" heißen. 
 
 Symmetrics_Agreement erstellt auch die CMS-Seiten
 AGB und Widerruf, die mit Symmetrics_ConfigGermanTexts
-oder manuell mit Texten gefuellt werden.
+oder manuell mit Texten gefüllt werden.
 
-Features:
+** FUNCTIONALITY
+*** A: Aktiviert die Agreements in der Systemkonfiguration
+*** B: Erstellt Seiten AGB und Widerruf
+*** C: Erstellt Blöcke "mrg_business_terms" und
+        "mrg_revocation"
+*** D: Fügt Rendering für das Feld "Bestellbedingungen" im
+        Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
+        verwendet werden koennen.
+*** E: Bindet die unter b) erstellen Blöcke in den agreeements
+        ein.
 
-- Erstellt Seiten AGB und Widerruf
-- Fuegt Rendering fuer das Feld "Bestellbedingungen" im
-Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
-verwendet werden koennen.
+** TECHNICAL
+Überschreibt den Block Mage_Checkout_Model_Agreement und wendet
+den Standardtemplate-Filter auf den Inhalt der Agreements an.
+Via Migrationsskript werden die Seiten, Blöcke und Agreements
+erstellt.
 
-----------------------------------------------------
-Funktonalitaet und Besonderheiten
-----------------------------------------------------
-
-Das Modul arbeitet eng mit dem Modul 
-Symmetrics_ConfigGermanTexts zusammen und es ist
-deswegen empfehlenswert dieses Modul zusammen mit
-Symmetrics_Agreement zu nutzen.
+* TESTCASES
+** BASIC
+*** A: Prüfen Sie ob die Option "Checkout/Options/Enable Agreements"
+        aktiv ist und im Checkout-Review die entsprechenden Blöcke 
+        angezeigt werden.
+*** B: Prüfen Sie im Frontend und Backend die Existenz dieser Seiten
+*** C: Prüfen Sie im Frontend und Backend die Existenz dieser Blöcke
+*** D: Prüfen Sie, ob die {{block}} Aufrufe in den Agreement funktionieren,
+        am besten zusammen mit Testcase d)
+*** E: Prüfen Sie, ob in den Agreements die Blöcke "mrg_business_terms"
+        und "mrg_revocation" via {{block}} Aufruf eingebunden werden und
+        funktionieren.
