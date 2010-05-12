@@ -38,9 +38,6 @@ den Standardtemplate-Filter auf den Inhalt der Agreements an.
 Via Migrationsskript werden die Seiten, Blöcke und Agreements
 erstellt.
 
-** PROBLEMS
-Zur Zeit sind keine Probleme bekannt.
-
 * TESTCASES
 ** BASIC
 *** A: Prüfen Sie ob die Option "Checkout/Options/Enable Agreements"
