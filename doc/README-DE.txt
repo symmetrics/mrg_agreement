@@ -1,23 +1,23 @@
 * DOCUMENTATION
 
-** INSTALLATION
-Extrahieren Sie den Inhalt dieses Archivs in Ihr Magento Verzeichnis.
+** INSTALLATION 
+Extrahieren Sie den Inhalt dieses Archivs in Ihr Magento Verzeichnis. 
 Ggf. ist das Leeren/Auffrischen des Magento-Caches notwendig.
 
-** USAGE
+** USAGE 
 Das Modul erstellt Bestellbedingungen (AGBs und 
-Widerrufsbelehrung), die vom Kunden am Ende der Bestellung
-akzeptiert werden müssen. Zusützlich fügt das Modul
-die Möglichkeit hinzu im Feld, in welchem im Checkout die
-Texte angezeigt werden, Blockaufrufe wie {{block type ...}}
-zu verwenden. Die Blocks selbst werden von diesem Modul
-nicht erstellt. Diese müssen entweder manuell über
-CMS - Static Blocks oder mithilfe des Moduls
-Symmetrics_ConfigGermanTexts erstellt werden. Die 
+Widerrufsbelehrung), die vom Kunden am Ende der Bestellung 
+akzeptiert werden müssen. Zusaetzlich fügt das Modul
+ die Möglichkeit hinzu im Feld, in welchem im Checkout die
+ Texte angezeigt werden, Blockaufrufe wie {{block type ...}}
+zu verwenden. Die Blocks selbst werden von diesem Modul 
+nicht erstellt. Diese müssen entweder manuell über 
+CMS - Static Blocks oder mit Hilfe des Moduls
+ Symmetrics_ConfigGermanTexts erstellt werden. Die 
 Blocks (Identifier) muessen "mrg_business_terms"
 und "mrg_revocation" heißen. 
 
-Symmetrics_Agreement erstellt auch die CMS-Seiten
+Symmetrics_Agreement erstellt auch die CMS-Seiten 
 AGB und Widerruf, die mit Symmetrics_ConfigGermanTexts
 oder manuell mit Texten gefüllt werden.
 
@@ -32,10 +32,10 @@ oder manuell mit Texten gefüllt werden.
 *** E: Bindet die unter b) erstellen Blöcke in den agreeements
         ein.
 
-** TECHNICAL
-Überschreibt den Block Mage_Checkout_Model_Agreement und wendet
-den Standardtemplate-Filter auf den Inhalt der Agreements an.
-Via Migrationsskript werden die Seiten, Blöcke und Agreements
+** TECHNICAL 
+Überschreibt den Block Mage_Checkout_Model_Agreement und wendet 
+den Standard Template-Filter auf den Inhalt der Agreements an. 
+Via Migrationsskript werden die Seiten, Blöcke und Agreements 
 erstellt.
 
 * TESTCASES
@@ -45,7 +45,7 @@ erstellt.
         angezeigt werden.
 *** B: Prüfen Sie im Frontend und Backend die Existenz dieser Seiten
 *** C: Prüfen Sie im Frontend und Backend die Existenz dieser Blöcke
-*** D: Prüfen Sie, ob die {{block}} Aufrufe in den Agreement funktionieren,
+*** D: Prüfen Sie, ob die {{block}} Aufrufe in den Agreements funktionieren,
         am besten zusammen mit Testcase d)
 *** E: Prüfen Sie, ob in den Agreements die Blöcke "mrg_business_terms"
         und "mrg_revocation" via {{block}} Aufruf eingebunden werden und
