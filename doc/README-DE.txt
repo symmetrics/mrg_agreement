@@ -23,12 +23,15 @@ oder manuell mit Texten gefüllt werden.
 
 ** FUNCTIONALITY
 *** A: Aktiviert die Agreements in der Systemkonfiguration
+        System/Konfiguration/Verkäufe/Zur Kasse/Bezahloptionen/AGB aktivieren
 *** B: Erstellt Seiten AGB und Widerruf
 *** C: Erstellt Blöcke "mrg_business_terms" und
         "mrg_revocation"
 *** D: Fügt Rendering für das Feld "Bestellbedingungen" im
         Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
         verwendet werden koennen.
+        Die Bestellbedingungen finden sich im Backend unter
+        Verkäufe/Bestellbedimgungen
 *** E: Bindet die unter b) erstellen Blöcke in den agreeements
         ein.
 
