@@ -50,8 +50,19 @@ erstellt.
         entsprechenden Blöcke angezeigt werden.
 *** B: Prüfen Sie im Frontend und Backend die Existenz dieser Seiten
 *** C: Prüfen Sie im Frontend und Backend die Existenz dieser Blöcke
-*** D: Prüfen Sie, ob die {{block}} Aufrufe in den Agreements funktionieren,
-        am besten zusammen mit Testcase d)
-*** E: Prüfen Sie, ob in den Agreements die Blöcke "mrg_business_terms"
-        und "mrg_revocation" via {{block}} Aufruf eingebunden werden und
-        funktionieren.
+*** D: Versuchen Sie verschiedene Aufrufe in den Agreements und prüfen Sie,
+        ob diese dann so im Checkout/Review Step erscheinen.
+        Beispiele:
+        {{block type="cms/block" block_id="cms_block_name"}}
+        Wobei cms_block_name einem vorhandenen CMS Block Identifier
+        entsprechen muss.
+*** E: 1. Das Migrationsskript sollte Agreements mit folgenden Inhalten anlegen:
+           {{block type="cms/block" block_id="mrg_revocation"}} für die
+           Widerrufsbelehrung und
+           {{block type="cms/block" block_id="mrg_business_terms"}} für die
+           AGB.
+       2. Prüfen Sie im Backend, ob sich dieser Inhalt in den Agreements
+           befindet.
+       3. Prüfen Sie im Frontend im Checkout/Review Step, ob diese Blöcke
+           tatsächlich dem entsprechen, was im Backend unter CMS/Blöcke für die
+           Blöcke mrg_revocation bzw. mrg_business_terms eingetragen ist.
