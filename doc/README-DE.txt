@@ -18,17 +18,21 @@ Blocks (Identifier) muessen "mrg_business_terms"
 und "mrg_revocation" heißen. 
 
 Symmetrics_Agreement erstellt auch die CMS-Seiten 
-AGB und Widerruf, die mit Symmetrics_ConfigGermanTexts
+AGB und Widerrufsbelehrung, die mit Symmetrics_ConfigGermanTexts
 oder manuell mit Texten gefüllt werden.
 
 ** FUNCTIONALITY
 *** A: Aktiviert die Agreements in der Systemkonfiguration
-*** B: Erstellt Seiten AGB und Widerruf
+        unter "System -> Konfiguration -> Verkäufe -> Zur Kasse
+        -> Bezahloptionen -> Enable Terms and Conditions"
+*** B: Erstellt Seiten AGB und Widerrufsbelehrung
 *** C: Erstellt Blöcke "mrg_business_terms" und
         "mrg_revocation"
 *** D: Fügt Rendering für das Feld "Bestellbedingungen" im
         Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
         verwendet werden koennen.
+        Die Bestellbedingungen finden sich im Backend unter
+        Verkäufe/Bestellbedimgungen
 *** E: Bindet die unter b) erstellen Blöcke in den agreeements
         ein.
 
@@ -40,9 +44,10 @@ erstellt.
 
 * TESTCASES
 ** BASIC
-*** A: Prüfen Sie ob die Option "Checkout/Options/Enable Agreements"
-        aktiv ist und im Checkout-Review die entsprechenden Blöcke 
-        angezeigt werden.
+*** A:Prüfen Sie ob die Option unter "System -> Konfiguration -> 
+        Verkäufe -> Zur Kasse -> Bezahloptionen -> Enable Terms and 
+        Conditions" aktiv ist und im Checkout-Review (letzer Schritt) die 
+        entsprechenden Blöcke angezeigt werden.
 *** B: Prüfen Sie im Frontend und Backend die Existenz dieser Seiten
 *** C: Prüfen Sie im Frontend und Backend die Existenz dieser Blöcke
 *** D: Prüfen Sie, ob die {{block}} Aufrufe in den Agreements funktionieren,
