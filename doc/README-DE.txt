@@ -18,13 +18,14 @@ Blocks (Identifier) muessen "mrg_business_terms"
 und "mrg_revocation" heißen. 
 
 Symmetrics_Agreement erstellt auch die CMS-Seiten 
-AGB und Widerruf, die mit Symmetrics_ConfigGermanTexts
+AGB und Widerrufsbelehrung, die mit Symmetrics_ConfigGermanTexts
 oder manuell mit Texten gefüllt werden.
 
 ** FUNCTIONALITY
 *** A: Aktiviert die Agreements in der Systemkonfiguration
-        System/Konfiguration/Verkäufe/Zur Kasse/Bezahloptionen/AGB aktivieren
-*** B: Erstellt Seiten AGB und Widerruf
+        unter "System -> Konfiguration -> Verkäufe -> Zur Kasse
+        -> Bezahloptionen -> Enable Terms and Conditions"
+*** B: Erstellt Seiten AGB und Widerrufsbelehrung
 *** C: Erstellt Blöcke "mrg_business_terms" und
         "mrg_revocation"
 *** D: Fügt Rendering für das Feld "Bestellbedingungen" im
@@ -43,13 +44,25 @@ erstellt.
 
 * TESTCASES
 ** BASIC
-*** A: Prüfen Sie ob die Option "Checkout/Options/Enable Agreements"
-        aktiv ist und im Checkout-Review die entsprechenden Blöcke 
-        angezeigt werden.
+*** A:Prüfen Sie ob die Option unter "System -> Konfiguration -> 
+        Verkäufe -> Zur Kasse -> Bezahloptionen -> Enable Terms and 
+        Conditions" aktiv ist und im Checkout-Review (letzer Schritt) die 
+        entsprechenden Blöcke angezeigt werden.
 *** B: Prüfen Sie im Frontend und Backend die Existenz dieser Seiten
 *** C: Prüfen Sie im Frontend und Backend die Existenz dieser Blöcke
-*** D: Prüfen Sie, ob die {{block}} Aufrufe in den Agreements funktionieren,
-        am besten zusammen mit Testcase d)
-*** E: Prüfen Sie, ob in den Agreements die Blöcke "mrg_business_terms"
-        und "mrg_revocation" via {{block}} Aufruf eingebunden werden und
-        funktionieren.
+*** D: Versuchen Sie verschiedene Aufrufe in den Agreements und prüfen Sie,
+        ob diese dann so im Checkout/Review Step erscheinen.
+        Beispiele:
+        {{block type="cms/block" block_id="cms_block_name"}}
+        Wobei cms_block_name einem vorhandenen CMS Block Identifier
+        entsprechen muss.
+*** E: 1. Das Migrationsskript sollte Agreements mit folgenden Inhalten anlegen:
+           {{block type="cms/block" block_id="mrg_revocation"}} für die
+           Widerrufsbelehrung und
+           {{block type="cms/block" block_id="mrg_business_terms"}} für die
+           AGB.
+       2. Prüfen Sie im Backend, ob sich dieser Inhalt in den Agreements
+           befindet.
+       3. Prüfen Sie im Frontend im Checkout/Review Step, ob diese Blöcke
+           tatsächlich dem entsprechen, was im Backend unter CMS/Blöcke für die
+           Blöcke mrg_revocation bzw. mrg_business_terms eingetragen ist.
