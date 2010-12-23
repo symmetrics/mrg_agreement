@@ -1,68 +1,55 @@
 * DOCUMENTATION
 
 ** INSTALLATION 
-Extrahieren Sie den Inhalt dieses Archivs in Ihr Magento Verzeichnis. 
-Ggf. ist das Leeren/Auffrischen des Magento-Caches notwendig.
+Extract content of this archive in your Magento directory. 
+It might be necessary to clear/ refresh the Magento cache.
 
 ** USAGE 
-Das Modul erstellt Bestellbedingungen (AGBs und 
-Widerrufsbelehrung), die vom Kunden am Ende der Bestellung 
-akzeptiert werden müssen. Zusaetzlich fügt das Modul
- die Möglichkeit hinzu im Feld, in welchem im Checkout die
- Texte angezeigt werden, Blockaufrufe wie {{block type ...}}
-zu verwenden. Die Blocks selbst werden von diesem Modul 
-nicht erstellt. Diese müssen entweder manuell über 
-CMS - Static Blocks oder mit Hilfe des Moduls
- Symmetrics_ConfigGermanTexts erstellt werden. Die 
-Blocks (Identifier) muessen "mrg_business_terms"
-und "mrg_revocation" heißen. 
+The module creates order conditions (Terms and Conditions and 
+Revocation Policy), which must be accepted by customers at the end of the ordering process. Besides, the module provides a possibility in the field in which in checkout the texts are displayed, to use block calls as  {{block type ...}}. Blocks themselves are not created by the module. They should be created either manually via CMS static blocks or with the help of module Symmetrics_ConfigGermanTexts. Blocks (identifier) should be called 
+"mrg_business_terms" and "mrg_revocation". 
 
-Symmetrics_Agreement erstellt auch die CMS-Seiten 
-AGB und Widerrufsbelehrung, die mit Symmetrics_ConfigGermanTexts
-oder manuell mit Texten gefüllt werden.
+Symmetrics_Agreement also creates CMS pages Terms and Conditions, and 
+Revocation Policy which are filled either with texts using Symmetrics_ConfigGermanTexts or manually. 
 
 ** FUNCTIONALITY
-*** A: Aktiviert die Agreements in der Systemkonfiguration
-        unter "System -> Konfiguration -> Verkäufe -> Zur Kasse
-        -> Bezahloptionen -> Enable Terms and Conditions"
-*** B: Erstellt Seiten AGB und Widerrufsbelehrung
-*** C: Erstellt Blöcke "mrg_business_terms" und
+*** A: Activates the agreements in the system configuration
+        under " System-> Configuration-> Sales-> To checkout
+-> Payment options-> Enable Terms and Conditions "
+*** B: Creates pages Terms and Conditions and Revocation Policy
+*** C: Creates blocks "mrg_business_terms" and
         "mrg_revocation"
-*** D: Fügt Rendering für das Feld "Bestellbedingungen" im
-        Checkout hinzu, sodass Aufrufe wie {{block .. }} dort
-        verwendet werden koennen.
-        Die Bestellbedingungen finden sich im Backend unter
-        Verkäufe/Bestellbedimgungen
-*** E: Bindet die unter b) erstellen Blöcke in den agreeements
-        ein.
+*** D: Inserts rendering for the field "Order conditions" in
+        checkout, so that calls as {{block .}} could be used there
+        The order conditions are found in backend under
+        Sales / Order conditions.
+*** E: Binds under b) created blocks to the agreeements
+        
 
 ** TECHNICAL 
-Überschreibt den Block Mage_Checkout_Model_Agreement und wendet 
-den Standard Template-Filter auf den Inhalt der Agreements an. 
-Via Migrationsskript werden die Seiten, Blöcke und Agreements 
-erstellt.
+Overwrites the block Mage_Checkout_Model_Agreement and applies 
+the standard template filter to the contents of the agreements. 
+Pages, blocks and agreements are created via migration script.
+
 
 * TESTCASES
 ** BASIC
-*** A:Prüfen Sie ob die Option unter "System -> Konfiguration -> 
-        Verkäufe -> Zur Kasse -> Bezahloptionen -> Enable Terms and 
-        Conditions" aktiv ist und im Checkout-Review (letzer Schritt) die 
-        entsprechenden Blöcke angezeigt werden.
-*** B: Prüfen Sie im Frontend und Backend die Existenz dieser Seiten
-*** C: Prüfen Sie im Frontend und Backend die Existenz dieser Blöcke
-*** D: Versuchen Sie verschiedene Aufrufe in den Agreements und prüfen Sie,
-        ob diese dann so im Checkout/Review Step erscheinen.
-        Beispiele:
-        {{block type="cms/block" block_id="cms_block_name"}}
-        Wobei cms_block_name einem vorhandenen CMS Block Identifier
-        entsprechen muss.
-*** E: 1. Das Migrationsskript sollte Agreements mit folgenden Inhalten anlegen:
-           {{block type="cms/block" block_id="mrg_revocation"}} für die
-           Widerrufsbelehrung und
-           {{block type="cms/block" block_id="mrg_business_terms"}} für die
-           AGB.
-       2. Prüfen Sie im Backend, ob sich dieser Inhalt in den Agreements
-           befindet.
-       3. Prüfen Sie im Frontend im Checkout/Review Step, ob diese Blöcke
-           tatsächlich dem entsprechen, was im Backend unter CMS/Blöcke für die
-           Blöcke mrg_revocation bzw. mrg_business_terms eingetragen ist.
+*** A: Check whether the option is active under "System-> Configuration-> 
+        Sales-> To checkout -> Payment options -> Enable Terms and 
+        Conditions " and the corresponding blocks are displayed in Checkout review (the last step).   
+*** B: Check whether these pages exist in frontend and backend.
+*** C: Check whether these blocks exist in frontend and backend.
+*** D: Try different calls in the agreements and check,
+        whether these appear so in the Checkout / Review step.
+        Examples:
+        {{block type = "cms/block" block_id = "cms_block_name"}}
+        Where cms_block_name should correspond to an available CMS Block Identifier.
+        
+*** E: 1. The migration script should provide agreements with the following contents:
+           {{block type = "cms/block" block_id = "mrg_revocation"}} for the
+           Revocation Policy and
+           {{block type = "cms/block" block_id = "mrg_business_terms"}} for the
+           Terms and Conditions.
+       2. Check in the backend, whether these contents are found in the agreements.
+       3. Check in the frontend in Checkout / Review step, whether these blocks
+           really correspond to that, which is entered in the backend under CMS/blocks for the blocks mrg_revocation or mrg_business_terms.
