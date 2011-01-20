@@ -17,7 +17,7 @@
  * @author    symmetrics gmbh <info@symmetrics.de>
  * @author    Eric Reiche <er@symmetrics.de>
  * @author    Eugen Gitin <eg@symmetrics.de>
- * @copyright 2009-2010 symmetrics gmbh
+ * @copyright 2009-2011 symmetrics gmbh
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://www.symmetrics.de/
  */
@@ -30,20 +30,34 @@
  * @author    symmetrics gmbh <info@symmetrics.de>
  * @author    Eric Reiche <er@symmetrics.de>
  * @author    Eugen Gitin <eg@symmetrics.de>
- * @copyright 2009-2010 symmetrics gmbh
+ * @copyright 2009-2011 symmetrics gmbh
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://www.symmetrics.de/
  */
 class Symmetrics_Agreement_Model_Agreement extends Mage_Checkout_Model_Agreement
 {
     /**
-     * Adding filter to the normal agreement window content
+     * Add parsing filter to agreement box content.
      *
      * @return string
      */
     public function getContent()
     {
         $content = $this->getData('content');
+        $processor = Mage::getModel('cms/template_filter');
+        $html = $processor->filter($content);
+        
+        return $html;
+    }
+    
+    /**
+     * Add parsing filter to agreement checkbox text.
+     *
+     * @return string
+     */
+    public function getCheckboxText()
+    {
+        $content = $this->getData('checkbox_text');
         $processor = Mage::getModel('cms/template_filter');
         $html = $processor->filter($content);
         
