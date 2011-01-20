@@ -19,7 +19,7 @@ Revocation Policy which are filled either with texts using Symmetrics_ConfigGerm
 *** B: Creates pages Terms and Conditions and Revocation Policy
 *** C: Creates blocks "mrg_business_terms" and
         "mrg_revocation"
-*** D: Inserts rendering for the field "Order conditions" in
+*** D: Inserts rendering for the field "Order conditions" and "Checkbox text" in
         checkout, so that calls as {{block .}} could be used there
         The order conditions are found in backend under
         Sales / Order conditions.
@@ -31,6 +31,8 @@ Overwrites the block Mage_Checkout_Model_Agreement and applies
 the standard template filter to the contents of the agreements. 
 Pages, blocks and agreements are created via migration script.
 
+** PROBLEMS
+The agreement.phtml template escapes HTML content for the checkbox text. The content box text is not affected by this.
 
 * TESTCASES
 ** BASIC
