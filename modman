@@ -1,0 +1,5 @@
+build/app/code/community/Symmetrics/Agreement/etc/config.xml app/code/community/Symmetrics/Agreement/etc/config.xml
+build/app/code/community/Symmetrics/Agreement/Model/Agreement.php app/code/community/Symmetrics/Agreement/Model/Agreement.php
+build/app/code/community/Symmetrics/Agreement/Model/Setup.php app/code/community/Symmetrics/Agreement/Model/Setup.php
+build/app/code/community/Symmetrics/Agreement/sql/agreement_setup/mysql4-install-0.1.0.php app/code/community/Symmetrics/Agreement/sql/agreement_setup/mysql4-install-0.1.0.php
+build/app/etc/modules/Symmetrics_Agreement.xml app/etc/modules/Symmetrics_Agreement.xml
